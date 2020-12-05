@@ -14,7 +14,7 @@ namespace DI01_FranGomez_01
 
         public override string ToString()
         {
-            return $"{Name}, {Description}";
+            return $"{ProductModelID}, {Name}, {Description}";
         }
     }
 }

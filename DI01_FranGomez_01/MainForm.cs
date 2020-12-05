@@ -13,10 +13,10 @@ using Dapper;
 
 namespace DI01_FranGomez_01
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         List<Model> models = new List<Model>();
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
 
@@ -29,13 +29,34 @@ namespace DI01_FranGomez_01
                 foreach (Model model in models)
                 {
                     listView1.Items.Add(model.ToString());
+                    //listBox1.Items.Add(model.Name + model.Description);
+
+                    //listBox1.Items.Add(model.ProductModelID.ToString());
+
                 }
             }
         }
 
         private void listView1_DoubleClick(object sender, EventArgs e)
         {
-            MessageBox.Show(string.Format("SelectedItem:\n{0}", listView1.SelectedItems.ToString()));
+            string productSelected = listView1.SelectedItems[0].Text;
+            int productId = int.Parse(productSelected.Split(',')[0]);
+
+            ProductForm pf = new ProductForm(productId);
+            pf.Show();
+
+        }
+
+        private void listBox1_DoubleClick(object sender, EventArgs e)
+        {
+            /*string str = listBox1.SelectedItem.ToString();
+            textBox1.Text = str;
+
+
+            ProductForm pf = new ProductForm(str);
+            pf.Show();*/
+
+            
         }
     }
 }
