@@ -20,6 +20,7 @@ namespace DI01_FranGomez
         private List<ProductModelComplete> productsList;
         private string lenguage = "en";
         DataTable dt;
+
         public AdvancedForm()
         {
             InitializeComponent();
