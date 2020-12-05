@@ -83,6 +83,7 @@ namespace DI01_FranGomez
                 SqlDataAdapter da = new SqlDataAdapter(sqlcomn);
                 da.Fill(dt);
                 dataGridView1.AutoGenerateColumns = false;
+                dt.AsEnumerable().Skip(100).Take(10);
                 dataGridView1.ColumnCount = 2;
                 dataGridView1.Columns[0].HeaderText = "Name";
                 dataGridView1.Columns[0].DataPropertyName = "Name";
@@ -94,7 +95,7 @@ namespace DI01_FranGomez
                 column1.Width = 11000;
                 dataGridView1.DataSource = dt;
                 sqlconn.Close();
-                //dataTable.AsEnumerable().Skip(100).Take(25);
+                //dataTable.AsEnumerable().Skip(100).Take(10);
             }
         }
 
@@ -107,15 +108,6 @@ namespace DI01_FranGomez
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("[Description] LIKE '{0}%' OR [Description] LIKE '%{0}%' OR [Description] LIKE '%{0}'", textBox2.Text);
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            CompleteForm cf = new CompleteForm();
-            //
-
-            //
-            cf.Show();
         }
 
         private void categoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -180,6 +172,15 @@ namespace DI01_FranGomez
             }
 
             //(dataGridView1.DataSource as DataTable).DefaultView.RowFilter = string.Format("[Product Subcategory] LIKE '{0}%' OR [Product Subcategory] LIKE '%{0}%'OR [Product Subcategory] LIKE '%{0}'", subCategoryComboBox.Text);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            CompleteForm cf = new CompleteForm();
+            //
+
+            //
+            cf.Show();
         }
     }
 }
