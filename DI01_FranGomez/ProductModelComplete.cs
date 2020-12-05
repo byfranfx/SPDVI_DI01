@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TareaDI01
+namespace DI01_FranGomez
 {
-    class Product
+    public class ProductModelComplete
     {
         public string ProductModel { get; set; }
         public string Description { get; set; }
@@ -21,7 +21,7 @@ namespace TareaDI01
         public string ProductCategory { get; set; }
         public string ProductSubcategory { get; set; }
 
-        public string FullInfo
+        public string info
         {
             get
             {
