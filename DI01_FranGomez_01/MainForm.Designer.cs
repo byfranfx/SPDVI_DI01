@@ -39,6 +39,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.applyAllFiltersButton = new System.Windows.Forms.Button();
             this.price1TextBox = new System.Windows.Forms.TextBox();
             this.price0TextBox = new System.Windows.Forms.TextBox();
             this.styleComboBox = new System.Windows.Forms.ComboBox();
@@ -62,7 +63,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
-            this.applyAllFiltersButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -163,6 +163,7 @@
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(174, 20);
             this.searchTextBox.TabIndex = 21;
+            this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
             // 
             // panel1
             // 
@@ -195,6 +196,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(347, 515);
             this.panel1.TabIndex = 3;
+            // 
+            // applyAllFiltersButton
+            // 
+            this.applyAllFiltersButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.applyAllFiltersButton.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.applyAllFiltersButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(39)))));
+            this.applyAllFiltersButton.Location = new System.Drawing.Point(27, 474);
+            this.applyAllFiltersButton.Name = "applyAllFiltersButton";
+            this.applyAllFiltersButton.Size = new System.Drawing.Size(137, 23);
+            this.applyAllFiltersButton.TabIndex = 29;
+            this.applyAllFiltersButton.Text = "Apply all filters";
+            this.applyAllFiltersButton.UseVisualStyleBackColor = false;
+            this.applyAllFiltersButton.Click += new System.EventHandler(this.applyAllFiltersButton_Click);
             // 
             // price1TextBox
             // 
@@ -441,19 +455,6 @@
             this.label13.Size = new System.Drawing.Size(276, 30);
             this.label13.TabIndex = 16;
             this.label13.Text = "AdventureWorks Products";
-            // 
-            // applyAllFiltersButton
-            // 
-            this.applyAllFiltersButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.applyAllFiltersButton.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.applyAllFiltersButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(39)))));
-            this.applyAllFiltersButton.Location = new System.Drawing.Point(27, 474);
-            this.applyAllFiltersButton.Name = "applyAllFiltersButton";
-            this.applyAllFiltersButton.Size = new System.Drawing.Size(137, 23);
-            this.applyAllFiltersButton.TabIndex = 29;
-            this.applyAllFiltersButton.Text = "Apply all filters";
-            this.applyAllFiltersButton.UseVisualStyleBackColor = false;
-            this.applyAllFiltersButton.Click += new System.EventHandler(this.applyAllFiltersButton_Click);
             // 
             // MainForm
             // 
