@@ -64,7 +64,6 @@ namespace DI01_FranGomez_01
                 // Pagination
 
 
-
                 // comboBox Categories
                 string sqlquery1 = $"SELECT [Name] FROM [AdventureWorks2016].[Production].[ProductCategory]";
                 List<string> categories = new List<string>();
