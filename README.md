@@ -1,7 +1,7 @@
-# SPDVI_DI01 * Proyect *
+# SPDVI_DI01
 
-Author: Fran Gomez
-Date: 6, december from 2020.
+- Author: Fran Gomez
+- Date: 6, december from 2020.
 
 
 ## Index.
