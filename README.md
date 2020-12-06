@@ -33,4 +33,5 @@ create an Azure Server for save the BDD AdventureWorks to use as a resource.
 - More control errors with exceptions and regular expresions.
 - Advanced Querys to better results (Search.textBox vs Filters.Combo.Box) *the Search TextBox are independent of comboBox Filters and Prices.textBox*
 - UPDATE, INSERT, DELETE. *in advanced properties product from.*
+- pagination. (form exist but not integrated code)
 
