@@ -1,0 +1,1 @@
+SELECT DISTINCT [Color] FROM [AdventureWorks2016].[Production].[Product] WHERE [Color] IS NOT NULL;

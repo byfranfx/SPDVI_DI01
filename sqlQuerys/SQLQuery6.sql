@@ -1,0 +1,1 @@
+SELECT DISTINCT [ProductLine] FROM [AdventureWorks2016].[Production].[Product] WHERE ProductLine IS NOT NULL

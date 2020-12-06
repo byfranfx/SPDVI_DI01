@@ -1,0 +1,1 @@
+SELECT [Name] FROM [AdventureWorks2016].[Production].[ProductCategory];

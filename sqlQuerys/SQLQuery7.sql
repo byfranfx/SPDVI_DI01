@@ -1,0 +1,1 @@
+SELECT DISTINCT [Class] FROM [AdventureWorks2016].[Production].[Product] WHERE Class IS NOT NULL;

@@ -1,0 +1,1 @@
+SELECT DISTINCT Size FROM [AdventureWorks2016].[Production].[Product] WHERE [Size] IS NOT NULL;
