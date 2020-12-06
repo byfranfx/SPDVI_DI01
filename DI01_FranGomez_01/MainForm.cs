@@ -178,16 +178,36 @@ namespace DI01_FranGomez_01
                 }
             }
         }
-        // Querys pendientes
+        private void price0TextBox_TextChanged_1(object sender, EventArgs e)
+        {
+            string conn = ConfigurationManager.ConnectionStrings["AdventureWorks2016"].ConnectionString;
+            using (SqlConnection connection = new SqlConnection(conn))
+            {
+                string sql = $@"select Production.ProductModel.ProductModelID, Production.ProductModel.Name, Production.ProductDescription.Description FROM Production.Product INNER JOIN Production.ProductSubcategory ON Production.Product.ProductSubcategoryID = Production.ProductSubcategory.ProductSubcategoryID INNER JOIN Production.ProductCategory ON Production.ProductSubcategory.ProductCategoryID = Production.ProductCategory.ProductCategoryID INNER JOIN Production.ProductModel ON Production.Product.ProductModelID = Production.ProductModel.ProductModelID INNER JOIN Production.ProductModelProductDescriptionCulture ON Production.ProductModel.ProductModelID = Production.ProductModelProductDescriptionCulture.ProductModelID INNER JOIN Production.ProductDescription ON Production.ProductModelProductDescriptionCulture.ProductDescriptionID = Production.ProductDescription.ProductDescriptionID WHERE ProductModelProductDescriptionCulture.CultureID = '{lenguageComboBox.Text}' AND Product.ProductModelID IS NOT NULL AND (Production.Product.ListPrice > '{price0TextBox.Text}') AND (Production.Product.ListPrice < '{price1TextBox.Text}');";
+                listView1.Items.Clear();
+                List<Model> listSize = new List<Model>();
+                listSize = connection.Query<Model>(sql).ToList();
+                foreach (Model model in listSize)
+                {
+                    listView1.Items.Add(model.ToString());
+                }
+            }
+        }
         private void price1TextBox_TextChanged(object sender, EventArgs e)
         {
-
+            string conn = ConfigurationManager.ConnectionStrings["AdventureWorks2016"].ConnectionString;
+            using (SqlConnection connection = new SqlConnection(conn))
+            {
+                string sql = $@"select Production.ProductModel.ProductModelID, Production.ProductModel.Name, Production.ProductDescription.Description FROM Production.Product INNER JOIN Production.ProductSubcategory ON Production.Product.ProductSubcategoryID = Production.ProductSubcategory.ProductSubcategoryID INNER JOIN Production.ProductCategory ON Production.ProductSubcategory.ProductCategoryID = Production.ProductCategory.ProductCategoryID INNER JOIN Production.ProductModel ON Production.Product.ProductModelID = Production.ProductModel.ProductModelID INNER JOIN Production.ProductModelProductDescriptionCulture ON Production.ProductModel.ProductModelID = Production.ProductModelProductDescriptionCulture.ProductModelID INNER JOIN Production.ProductDescription ON Production.ProductModelProductDescriptionCulture.ProductDescriptionID = Production.ProductDescription.ProductDescriptionID WHERE ProductModelProductDescriptionCulture.CultureID = '{lenguageComboBox.Text}' AND Product.ProductModelID IS NOT NULL AND (Production.Product.ListPrice > '{price0TextBox.Text}') AND (Production.Product.ListPrice < '{price1TextBox.Text}');";
+                listView1.Items.Clear();
+                List<Model> listSize = new List<Model>();
+                listSize = connection.Query<Model>(sql).ToList();
+                foreach (Model model in listSize)
+                {
+                    listView1.Items.Add(model.ToString());
+                }
+            }
         }
-        private void price0TextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        //
         private void sizeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string conn = ConfigurationManager.ConnectionStrings["AdventureWorks2016"].ConnectionString;
@@ -278,13 +298,12 @@ namespace DI01_FranGomez_01
                 }
             }
         }
-
         private void searchTextBox_TextChanged(object sender, EventArgs e)
         {
             string conn = ConfigurationManager.ConnectionStrings["AdventureWorks2016"].ConnectionString;
             using (SqlConnection connection = new SqlConnection(conn))
             {
-                string sql = $@"select Production.ProductModel.ProductModelID, Production.ProductModel.Name, Production.ProductDescription.Description FROM Production.Product INNER JOIN Production.ProductSubcategory ON Production.Product.ProductSubcategoryID = Production.ProductSubcategory.ProductSubcategoryID INNER JOIN Production.ProductCategory ON Production.ProductSubcategory.ProductCategoryID = Production.ProductCategory.ProductCategoryID INNER JOIN Production.ProductModel ON Production.Product.ProductModelID = Production.ProductModel.ProductModelID INNER JOIN Production.ProductModelProductDescriptionCulture ON Production.ProductModel.ProductModelID = Production.ProductModelProductDescriptionCulture.ProductModelID INNER JOIN Production.ProductDescription ON Production.ProductModelProductDescriptionCulture.ProductDescriptionID = Production.ProductDescription.ProductDescriptionID WHERE ProductModelProductDescriptionCulture.CultureID = '{lenguageComboBox.Text}' AND Product.ProductModelID IS NOT NULL AND Production.Product.Name LIKE '%{searchTextBox.Text}%' OR Production.ProductModel.Name LIKE '%{searchTextBox.Text}%' ";
+                string sql = $@"select Production.ProductModel.ProductModelID, Production.ProductModel.Name, Production.ProductDescription.Description FROM Production.Product INNER JOIN Production.ProductSubcategory ON Production.Product.ProductSubcategoryID = Production.ProductSubcategory.ProductSubcategoryID INNER JOIN Production.ProductCategory ON Production.ProductSubcategory.ProductCategoryID = Production.ProductCategory.ProductCategoryID INNER JOIN Production.ProductModel ON Production.Product.ProductModelID = Production.ProductModel.ProductModelID INNER JOIN Production.ProductModelProductDescriptionCulture ON Production.ProductModel.ProductModelID = Production.ProductModelProductDescriptionCulture.ProductModelID INNER JOIN Production.ProductDescription ON Production.ProductModelProductDescriptionCulture.ProductDescriptionID = Production.ProductDescription.ProductDescriptionID WHERE ProductModelProductDescriptionCulture.CultureID = '{lenguageComboBox.Text}' AND Product.ProductModelID IS NOT NULL AND Production.Product.Name LIKE '%{searchTextBox.Text}%' OR Production.ProductModel.Name LIKE '%{searchTextBox.Text}%';";
                 listView1.Items.Clear();
                 List<Model> listSubCategory = new List<Model>();
                 listSubCategory = connection.Query<Model>(sql).ToList();
@@ -294,5 +313,7 @@ namespace DI01_FranGomez_01
                 }
             }
         }
+
+        
     }
 }

@@ -216,6 +216,7 @@
             this.price1TextBox.Name = "price1TextBox";
             this.price1TextBox.Size = new System.Drawing.Size(65, 20);
             this.price1TextBox.TabIndex = 28;
+            this.price1TextBox.TextChanged += new System.EventHandler(this.price1TextBox_TextChanged);
             // 
             // price0TextBox
             // 
@@ -223,6 +224,7 @@
             this.price0TextBox.Name = "price0TextBox";
             this.price0TextBox.Size = new System.Drawing.Size(65, 20);
             this.price0TextBox.TabIndex = 28;
+            this.price0TextBox.TextChanged += new System.EventHandler(this.price0TextBox_TextChanged_1);
             // 
             // styleComboBox
             // 
