@@ -39,13 +39,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.applyAllFiltersButton = new System.Windows.Forms.Button();
+            this.helpLabel = new System.Windows.Forms.Label();
+            this.availableBox = new System.Windows.Forms.CheckBox();
             this.price1TextBox = new System.Windows.Forms.TextBox();
             this.price0TextBox = new System.Windows.Forms.TextBox();
             this.styleComboBox = new System.Windows.Forms.ComboBox();
             this.classComboBox = new System.Windows.Forms.ComboBox();
             this.productLineComboBox = new System.Windows.Forms.ComboBox();
-            this.clearButton = new System.Windows.Forms.Button();
             this.sizeComboBox = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -55,13 +55,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.Products = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.nextPageButton = new System.Windows.Forms.Button();
+            this.previousBPageButton = new System.Windows.Forms.Button();
             this.productsFoundLabel = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.numberOfPagesLabel = new System.Windows.Forms.Label();
+            this.paginationComboBox = new System.Windows.Forms.ComboBox();
+            this.totalOfPagesLabel = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.numberOfPageLabel = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -72,7 +73,7 @@
             this.categoryComboBox.FormattingEnabled = true;
             this.categoryComboBox.Location = new System.Drawing.Point(142, 320);
             this.categoryComboBox.Name = "categoryComboBox";
-            this.categoryComboBox.Size = new System.Drawing.Size(174, 21);
+            this.categoryComboBox.Size = new System.Drawing.Size(174, 23);
             this.categoryComboBox.TabIndex = 5;
             this.categoryComboBox.SelectedIndexChanged += new System.EventHandler(this.categoryComboBox_SelectedIndexChanged);
             // 
@@ -114,7 +115,7 @@
             this.colorComboBox.FormattingEnabled = true;
             this.colorComboBox.Location = new System.Drawing.Point(142, 109);
             this.colorComboBox.Name = "colorComboBox";
-            this.colorComboBox.Size = new System.Drawing.Size(174, 21);
+            this.colorComboBox.Size = new System.Drawing.Size(174, 23);
             this.colorComboBox.TabIndex = 15;
             this.colorComboBox.SelectedIndexChanged += new System.EventHandler(this.ColorComboBox_SelectedIndexChanged);
             // 
@@ -123,7 +124,7 @@
             this.subCategoryComboBox.FormattingEnabled = true;
             this.subCategoryComboBox.Location = new System.Drawing.Point(142, 356);
             this.subCategoryComboBox.Name = "subCategoryComboBox";
-            this.subCategoryComboBox.Size = new System.Drawing.Size(174, 21);
+            this.subCategoryComboBox.Size = new System.Drawing.Size(174, 23);
             this.subCategoryComboBox.TabIndex = 11;
             this.subCategoryComboBox.SelectedIndexChanged += new System.EventHandler(this.subCategoryComboBox_SelectedIndexChanged);
             // 
@@ -143,7 +144,7 @@
             this.lenguageComboBox.FormattingEnabled = true;
             this.lenguageComboBox.Location = new System.Drawing.Point(142, 70);
             this.lenguageComboBox.Name = "lenguageComboBox";
-            this.lenguageComboBox.Size = new System.Drawing.Size(174, 21);
+            this.lenguageComboBox.Size = new System.Drawing.Size(174, 23);
             this.lenguageComboBox.TabIndex = 18;
             // 
             // label5
@@ -161,20 +162,20 @@
             // 
             this.searchTextBox.Location = new System.Drawing.Point(142, 35);
             this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(174, 20);
+            this.searchTextBox.Size = new System.Drawing.Size(174, 21);
             this.searchTextBox.TabIndex = 21;
             this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(39)))));
-            this.panel1.Controls.Add(this.applyAllFiltersButton);
+            this.panel1.Controls.Add(this.helpLabel);
+            this.panel1.Controls.Add(this.availableBox);
             this.panel1.Controls.Add(this.price1TextBox);
             this.panel1.Controls.Add(this.price0TextBox);
             this.panel1.Controls.Add(this.styleComboBox);
             this.panel1.Controls.Add(this.classComboBox);
             this.panel1.Controls.Add(this.productLineComboBox);
-            this.panel1.Controls.Add(this.clearButton);
             this.panel1.Controls.Add(this.sizeComboBox);
             this.panel1.Controls.Add(this.searchTextBox);
             this.panel1.Controls.Add(this.label5);
@@ -192,29 +193,42 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.subCategoryComboBox);
             this.panel1.Controls.Add(this.colorComboBox);
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(26, 95);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(347, 515);
             this.panel1.TabIndex = 3;
             // 
-            // applyAllFiltersButton
+            // helpLabel
             // 
-            this.applyAllFiltersButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.applyAllFiltersButton.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.applyAllFiltersButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(39)))));
-            this.applyAllFiltersButton.Location = new System.Drawing.Point(27, 474);
-            this.applyAllFiltersButton.Name = "applyAllFiltersButton";
-            this.applyAllFiltersButton.Size = new System.Drawing.Size(137, 23);
-            this.applyAllFiltersButton.TabIndex = 29;
-            this.applyAllFiltersButton.Text = "Apply all filters";
-            this.applyAllFiltersButton.UseVisualStyleBackColor = false;
-            this.applyAllFiltersButton.Click += new System.EventHandler(this.applyAllFiltersButton_Click);
+            this.helpLabel.AutoSize = true;
+            this.helpLabel.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.helpLabel.ForeColor = System.Drawing.Color.White;
+            this.helpLabel.Location = new System.Drawing.Point(267, 481);
+            this.helpLabel.Name = "helpLabel";
+            this.helpLabel.Size = new System.Drawing.Size(44, 15);
+            this.helpLabel.TabIndex = 31;
+            this.helpLabel.Text = "¿Help?";
+            this.helpLabel.Click += new System.EventHandler(this.helpLabel_Click);
+            // 
+            // availableBox
+            // 
+            this.availableBox.AutoSize = true;
+            this.availableBox.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.availableBox.ForeColor = System.Drawing.Color.White;
+            this.availableBox.Location = new System.Drawing.Point(142, 400);
+            this.availableBox.Name = "availableBox";
+            this.availableBox.Size = new System.Drawing.Size(169, 19);
+            this.availableBox.TabIndex = 30;
+            this.availableBox.Text = "Available / Not Available";
+            this.availableBox.UseVisualStyleBackColor = true;
+            this.availableBox.CheckedChanged += new System.EventHandler(this.availableBox_CheckedChanged);
             // 
             // price1TextBox
             // 
-            this.price1TextBox.Location = new System.Drawing.Point(251, 144);
+            this.price1TextBox.Location = new System.Drawing.Point(247, 144);
             this.price1TextBox.Name = "price1TextBox";
-            this.price1TextBox.Size = new System.Drawing.Size(65, 20);
+            this.price1TextBox.Size = new System.Drawing.Size(51, 21);
             this.price1TextBox.TabIndex = 28;
             this.price1TextBox.TextChanged += new System.EventHandler(this.price1TextBox_TextChanged);
             // 
@@ -222,7 +236,7 @@
             // 
             this.price0TextBox.Location = new System.Drawing.Point(142, 144);
             this.price0TextBox.Name = "price0TextBox";
-            this.price0TextBox.Size = new System.Drawing.Size(65, 20);
+            this.price0TextBox.Size = new System.Drawing.Size(51, 21);
             this.price0TextBox.TabIndex = 28;
             this.price0TextBox.TextChanged += new System.EventHandler(this.price0TextBox_TextChanged_1);
             // 
@@ -231,7 +245,7 @@
             this.styleComboBox.FormattingEnabled = true;
             this.styleComboBox.Location = new System.Drawing.Point(142, 284);
             this.styleComboBox.Name = "styleComboBox";
-            this.styleComboBox.Size = new System.Drawing.Size(174, 21);
+            this.styleComboBox.Size = new System.Drawing.Size(174, 23);
             this.styleComboBox.TabIndex = 27;
             this.styleComboBox.SelectedIndexChanged += new System.EventHandler(this.styleComboBox_SelectedIndexChanged);
             // 
@@ -240,7 +254,7 @@
             this.classComboBox.FormattingEnabled = true;
             this.classComboBox.Location = new System.Drawing.Point(142, 250);
             this.classComboBox.Name = "classComboBox";
-            this.classComboBox.Size = new System.Drawing.Size(174, 21);
+            this.classComboBox.Size = new System.Drawing.Size(174, 23);
             this.classComboBox.TabIndex = 26;
             this.classComboBox.SelectedIndexChanged += new System.EventHandler(this.classComboBox_SelectedIndexChanged);
             // 
@@ -249,30 +263,16 @@
             this.productLineComboBox.FormattingEnabled = true;
             this.productLineComboBox.Location = new System.Drawing.Point(142, 215);
             this.productLineComboBox.Name = "productLineComboBox";
-            this.productLineComboBox.Size = new System.Drawing.Size(174, 21);
+            this.productLineComboBox.Size = new System.Drawing.Size(174, 23);
             this.productLineComboBox.TabIndex = 25;
             this.productLineComboBox.SelectedIndexChanged += new System.EventHandler(this.productLineComboBox_SelectedIndexChanged);
-            // 
-            // clearButton
-            // 
-            this.clearButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(111)))));
-            this.clearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.clearButton.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.clearButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(39)))));
-            this.clearButton.Location = new System.Drawing.Point(179, 474);
-            this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(137, 23);
-            this.clearButton.TabIndex = 2;
-            this.clearButton.Text = "Clear filters";
-            this.clearButton.UseVisualStyleBackColor = false;
-            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // sizeComboBox
             // 
             this.sizeComboBox.FormattingEnabled = true;
             this.sizeComboBox.Location = new System.Drawing.Point(142, 179);
             this.sizeComboBox.Name = "sizeComboBox";
-            this.sizeComboBox.Size = new System.Drawing.Size(174, 21);
+            this.sizeComboBox.Size = new System.Drawing.Size(174, 23);
             this.sizeComboBox.TabIndex = 24;
             this.sizeComboBox.SelectedIndexChanged += new System.EventHandler(this.sizeComboBox_SelectedIndexChanged);
             // 
@@ -281,11 +281,11 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Malgun Gothic", 8F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(221, 148);
+            this.label6.Location = new System.Drawing.Point(199, 150);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(18, 13);
+            this.label6.Size = new System.Drawing.Size(114, 13);
             this.label6.TabIndex = 16;
-            this.label6.Text = "to";
+            this.label6.Text = "€  to                   €";
             // 
             // label12
             // 
@@ -362,33 +362,35 @@
             // Products
             // 
             this.Products.Text = "Products";
-            this.Products.Width = 1250;
+            this.Products.Width = 1750;
             // 
-            // button1
+            // nextPageButton
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(111)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.button1.Location = new System.Drawing.Point(495, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(63, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = ">";
-            this.button1.UseVisualStyleBackColor = false;
+            this.nextPageButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(111)))));
+            this.nextPageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.nextPageButton.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.nextPageButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.nextPageButton.Location = new System.Drawing.Point(495, 15);
+            this.nextPageButton.Name = "nextPageButton";
+            this.nextPageButton.Size = new System.Drawing.Size(63, 23);
+            this.nextPageButton.TabIndex = 1;
+            this.nextPageButton.Text = ">";
+            this.nextPageButton.UseVisualStyleBackColor = false;
+            this.nextPageButton.Click += new System.EventHandler(this.nextPageButton_Click);
             // 
-            // button2
+            // previousBPageButton
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(111)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.button2.Location = new System.Drawing.Point(380, 15);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(63, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "<";
-            this.button2.UseVisualStyleBackColor = false;
+            this.previousBPageButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(71)))), ((int)(((byte)(111)))));
+            this.previousBPageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.previousBPageButton.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.previousBPageButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.previousBPageButton.Location = new System.Drawing.Point(380, 15);
+            this.previousBPageButton.Name = "previousBPageButton";
+            this.previousBPageButton.Size = new System.Drawing.Size(63, 23);
+            this.previousBPageButton.TabIndex = 2;
+            this.previousBPageButton.Text = "<";
+            this.previousBPageButton.UseVisualStyleBackColor = false;
+            this.previousBPageButton.Click += new System.EventHandler(this.previousBPageButton_Click);
             // 
             // productsFoundLabel
             // 
@@ -397,30 +399,31 @@
             this.productsFoundLabel.ForeColor = System.Drawing.Color.White;
             this.productsFoundLabel.Location = new System.Drawing.Point(17, 19);
             this.productsFoundLabel.Name = "productsFoundLabel";
-            this.productsFoundLabel.Size = new System.Drawing.Size(14, 15);
+            this.productsFoundLabel.Size = new System.Drawing.Size(69, 15);
             this.productsFoundLabel.TabIndex = 3;
-            this.productsFoundLabel.Text = "0";
+            this.productsFoundLabel.Text = "0 Products";
             // 
-            // comboBox1
+            // paginationComboBox
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(850, 16);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(69, 23);
-            this.comboBox1.TabIndex = 4;
+            this.paginationComboBox.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.paginationComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.paginationComboBox.FormattingEnabled = true;
+            this.paginationComboBox.Location = new System.Drawing.Point(850, 16);
+            this.paginationComboBox.Name = "paginationComboBox";
+            this.paginationComboBox.Size = new System.Drawing.Size(69, 23);
+            this.paginationComboBox.TabIndex = 4;
+            this.paginationComboBox.SelectedIndexChanged += new System.EventHandler(this.paginationComboBox_SelectedIndexChanged);
             // 
-            // numberOfPagesLabel
+            // totalOfPagesLabel
             // 
-            this.numberOfPagesLabel.AutoSize = true;
-            this.numberOfPagesLabel.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.numberOfPagesLabel.ForeColor = System.Drawing.Color.White;
-            this.numberOfPagesLabel.Location = new System.Drawing.Point(463, 19);
-            this.numberOfPagesLabel.Name = "numberOfPagesLabel";
-            this.numberOfPagesLabel.Size = new System.Drawing.Size(14, 15);
-            this.numberOfPagesLabel.TabIndex = 5;
-            this.numberOfPagesLabel.Text = "0";
+            this.totalOfPagesLabel.AutoSize = true;
+            this.totalOfPagesLabel.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.totalOfPagesLabel.ForeColor = System.Drawing.Color.White;
+            this.totalOfPagesLabel.Location = new System.Drawing.Point(645, 19);
+            this.totalOfPagesLabel.Name = "totalOfPagesLabel";
+            this.totalOfPagesLabel.Size = new System.Drawing.Size(86, 15);
+            this.totalOfPagesLabel.TabIndex = 5;
+            this.totalOfPagesLabel.Text = "0 Total Pages";
             // 
             // label8
             // 
@@ -438,14 +441,26 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(39)))));
             this.panel2.Controls.Add(this.productsFoundLabel);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.comboBox1);
-            this.panel2.Controls.Add(this.numberOfPagesLabel);
+            this.panel2.Controls.Add(this.nextPageButton);
+            this.panel2.Controls.Add(this.previousBPageButton);
+            this.panel2.Controls.Add(this.paginationComboBox);
+            this.panel2.Controls.Add(this.numberOfPageLabel);
+            this.panel2.Controls.Add(this.totalOfPagesLabel);
             this.panel2.Location = new System.Drawing.Point(379, 22);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(936, 55);
             this.panel2.TabIndex = 7;
+            // 
+            // numberOfPageLabel
+            // 
+            this.numberOfPageLabel.AutoSize = true;
+            this.numberOfPageLabel.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.numberOfPageLabel.ForeColor = System.Drawing.Color.White;
+            this.numberOfPageLabel.Location = new System.Drawing.Point(462, 19);
+            this.numberOfPageLabel.Name = "numberOfPageLabel";
+            this.numberOfPageLabel.Size = new System.Drawing.Size(25, 15);
+            this.numberOfPageLabel.TabIndex = 5;
+            this.numberOfPageLabel.Text = "0 P";
             // 
             // label13
             // 
@@ -496,11 +511,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader Products;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button nextPageButton;
+        private System.Windows.Forms.Button previousBPageButton;
         private System.Windows.Forms.Label productsFoundLabel;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label numberOfPagesLabel;
+        private System.Windows.Forms.ComboBox paginationComboBox;
+        private System.Windows.Forms.Label totalOfPagesLabel;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
@@ -514,10 +529,11 @@
         private System.Windows.Forms.ComboBox productLineComboBox;
         private System.Windows.Forms.ComboBox classComboBox;
         private System.Windows.Forms.ComboBox styleComboBox;
-        private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.TextBox price1TextBox;
         private System.Windows.Forms.TextBox price0TextBox;
-        private System.Windows.Forms.Button applyAllFiltersButton;
+        private System.Windows.Forms.Label numberOfPageLabel;
+        private System.Windows.Forms.CheckBox availableBox;
+        private System.Windows.Forms.Label helpLabel;
     }
 }
 
